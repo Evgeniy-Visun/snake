@@ -8,7 +8,7 @@ namespace Snake
 {
     class HorizontalLine : Figure
     {
-      
+
         public HorizontalLine(int xLeft, int xRight, int y, char symb)
         {
             pList = new List<Point>();
@@ -21,14 +21,14 @@ namespace Snake
             //pList.Add(p2);
             //pList.Add(p3);
 
-            for (int x=xLeft; x<=xRight; x++)
+            for (int x = xLeft; x <= xRight; x++)
             {
                 Point p = new Point(x, y, symb);
                 pList.Add(p);
             }
-            
-        }
 
-        
+        }
     }
+        
+}
 
