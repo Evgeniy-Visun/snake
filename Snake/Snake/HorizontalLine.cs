@@ -29,12 +29,12 @@ namespace Snake
 
         }
 
-        public override void Drow()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            base.Drow();
-           // Console.ForegroundColor = ConsoleColor.White;
-        }
+        //public override void Drow()
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    base.Drow();
+        //   // Console.ForegroundColor = ConsoleColor.White;
+        //}
     }
         
 }

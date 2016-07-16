@@ -23,7 +23,7 @@ namespace Snake
 
         public Point CreateFood()
         {
-            int x = random.Next(2, mapWidht - 2);
+            int x = random.Next(2, mapWidht - 52);
             int y = random.Next(2, mapHeight - 2);
             return new Point(x, y, sym);
         }
