@@ -12,46 +12,74 @@ namespace Snake
         static void Main(string[] args)
         {
             //рамка
-            HorizontalLine upLine = new HorizontalLine(0, Console.BufferWidth - 1, 0, '+');
-            HorizontalLine downLine = new HorizontalLine(0, Console.BufferWidth - 1, 28, '+');
-            VerticalLine leftLine = new VerticalLine(0, 28, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, 28, Console.BufferWidth - 1, '+');
+            //HorizontalLine upLine = new HorizontalLine(0, Console.BufferWidth - 1, 0, '+');
+            //HorizontalLine downLine = new HorizontalLine(0, Console.BufferWidth - 1, 28, '+');
+            //VerticalLine leftLine = new VerticalLine(0, 28, 0, '+');
+            //VerticalLine rightLine = new VerticalLine(0, 28, Console.BufferWidth - 1, '+');
 
-            upLine.Drow();
-            downLine.Drow();
-            leftLine.Drow();
-            rightLine.Drow();
+            //upLine.Drow();
+            //downLine.Drow();
+            //leftLine.Drow();
+            //rightLine.Drow();
 
-            Point p = new Point(6, 7, '+');
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Drow();
+            //Point p = new Point(6, 7, '+');
+            //Snake snake = new Snake(p, 4, Direction.RIGHT);
+            //snake.Drow();
 
 
-            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
-            Point food = foodCreator.CreateFood();
-            food.Draw();
+            //FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            //Point food = foodCreator.CreateFood();
+            //food.Draw();
 
-            while (true)
+            //while (true)
+            //{
+            //    if (snake.Eat(food))
+            //    {
+            //        food = foodCreator.CreateFood();
+            //        food.Draw();
+            //    }
+            //    else
+            //    {
+            //        snake.Move();
+            //    }
+            //    Thread.Sleep(100);
+
+            //    if (Console.KeyAvailable)
+            //    {
+            //        ConsoleKeyInfo key = Console.ReadKey();
+            //        snake.HandleKey(key.Key);
+            //    }
+            //  }
+
+            //Console.ReadLine();
+
+            VerticalLine v1 = new VerticalLine(0, 10, 5, '%');
+            Draw(v1);
+
+            Point p = new Point(4, 5, '*');
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            Snake snake = (Snake)fSnake;
+
+            HorizontalLine h1 = new HorizontalLine(0, 5, 6, '&');
+
+            List<Figure> figures = new List<Figure>();
+            figures.Add(fSnake);
+            figures.Add(v1);
+            figures.Add(h1);
+
+            foreach (var f in figures)
             {
-                if (snake.Eat(food))
-                {
-                    food = foodCreator.CreateFood();
-                    food.Draw();
-                }
-                else
-                {
-                    snake.Move();
-                }
-                Thread.Sleep(100);
-           
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
-                }
-              }
-            
-            Console.ReadLine();
+                f.Drow();
+            }
+
         }
+        static void Draw (Figure figure)
+        {
+            figure.Drow();
+        }
+        
+
+            
     }
 }
